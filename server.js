@@ -10,11 +10,11 @@ app.get('/', (req, res) => {
   res.send('Welcome to House of Mozes');
 });
 
-app.post('/fabrics/', (req, res)=>{
+app.post('/api/v1/fabrics/', (req, res)=>{ 
   res.send('received');
 });
 
-app.get('/fabrics/new', (req, res)=>{
+app.get('/api/v1/fabrics/new', (req, res)=>{
   res.render('New');
 });
 
