@@ -6,8 +6,9 @@ class Edit extends React.Component {
         return (
             <div>
                 <h1>Edit Fabrics page</h1>
-                <form action={`/api/v1/fabrics/${fabrics.id}?_method=PUT`} method="POST">
+                <form action={`/api/v1/fabrics/:${fabrics.id}?_method=PUT`} method="POST">
                     Name: <input type="text" name="name" /><br/>
+                    Color: <input type="text" name="color" /><br/>
                     Image: <input type="text" name="image" /><br/>
                     <input type="submit" name="" value="Edit Fabric"/>
                 </form>

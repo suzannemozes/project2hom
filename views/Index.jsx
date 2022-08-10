@@ -6,32 +6,32 @@ const myStyle = {
 
 class Index extends React.Component {
     render() {
-        const { fabric } = this.props;
+        const { fabrics } = this.props;
         return (
                 <div>
                   <h1>Fabric Index Page</h1>
-                  {/* <nav>
-                      <a href="/api/v1/fabrics/new">Create a new fabric</a>
+                  <nav>
+                      <a href="/api/v1/fabrics/new/">Create a new fabric</a>
                     </nav>
-                  <div style={myStyle}>My Second React Component!</div> */}
-                  {/* <ul>
-                        {pokemon.map((fabric) => {
+                  <div style={myStyle}></div> 
+                  
+                  <ul>
+                        {fabrics.map((fabric) => {
                           console.log(fabric)
                             return (
                                 <li>
                                      The{' '}
-                                    <a href={`/api/v1/fabric/${fabric.id}`}>
+                                    <a href={`/api/v1/fabrics/${fabric.id}`}>
                    
                                         {fabric.name.charAt(0).toUpperCase() + fabric.name.slice(1)}</a>{' '} is {fabric.color}  <br></br>
-                                        {pokemon.image}
                                     <img src={fabric.image} />
                                     <br />
-                                    <form action={`/api/v1/fabric/${fabric.id}`} method="POST"><button type="submit">Delete</button></form>
-                                    <a href={`/api/v1/pokemon/${fabric.id}/edit`}>Edit fabric</a>
+                                    <form action={`/api/v1/fabrics/${fabric.id}`} method="POST"><button type="submit">Delete</button></form>
+                                    <a href={`/api/v1/fabrics/${fabric.id}/edit`}>Edit fabric</a>
                                 </li>
                             );
                         })}
-                    </ul> */}
+                    </ul>
                 </div>
         )
     }
