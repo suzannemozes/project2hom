@@ -1,27 +1,39 @@
 const React = require('react');
+const myStyle = {
+  color: '#ffffff',
+  backgroundColor: '#000000',
+};
 
 class Index extends React.Component {
-  render() {
-    return (
-        <div>
-            <h1>Fabrics index page</h1>
-            <ul>
-                {
-                   this.props.fabrics.map((fabric, i) => {
-                    return (
-                        <li>
-                        The { fabric.name } is { fabric.color }
-                        { fabric.upholstery ? `It is upholstery fabric.` : `It is not upholstery fabric.` }
-                        <nav>
-                           <a href="/fabrics/new">Create a New Fabric</a>
-                        </nav>
-                        </li>
-                        )
-                    })
-                }
-            </ul>
-        </div> );
+    render() {
+        const { fabric } = this.props;
+        return (
+                <div>
+                  <h1>Fabric Index Page</h1>
+                  {/* <nav>
+                      <a href="/api/v1/fabrics/new">Create a new fabric</a>
+                    </nav>
+                  <div style={myStyle}>My Second React Component!</div> */}
+                  {/* <ul>
+                        {pokemon.map((fabric) => {
+                          console.log(fabric)
+                            return (
+                                <li>
+                                     The{' '}
+                                    <a href={`/api/v1/fabric/${fabric.id}`}>
+                   
+                                        {fabric.name.charAt(0).toUpperCase() + fabric.name.slice(1)}</a>{' '} is {fabric.color}  <br></br>
+                                        {pokemon.image}
+                                    <img src={fabric.image} />
+                                    <br />
+                                    <form action={`/api/v1/fabric/${fabric.id}`} method="POST"><button type="submit">Delete</button></form>
+                                    <a href={`/api/v1/pokemon/${fabric.id}/edit`}>Edit fabric</a>
+                                </li>
+                            );
+                        })}
+                    </ul> */}
+                </div>
+        )
+    }
   }
-}
-
-module.exports = Index;
+  module.exports = Index;

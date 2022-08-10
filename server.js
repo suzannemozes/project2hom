@@ -1,33 +1,53 @@
 const express = require('express');
+const mongoose = require('mongoose')
 require('dotenv').config();
 const app = express();
-// const Fabric = require('/api/v1//models/Fabrics.js');
+// const Fabric = require('/api/v1/models/Fabrics');
 const port = process.env.PORT || 3003
+const methodOverride = require('method-override');
+// const fabricData = require('./api/v1/utilities/fabricData')
 
-app.set('view engine', 'jsx');
-app.engine('jsx', require('express-react-views').createEngine());
-
-app.get('/api/v1/', (req, res) => {
-  res.send('Welcome to House of Mozes');
+//DB Connection
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connection.once('open', ()=> {
+    console.log('connected to mongo');
 });
 
-// //Index route render all fabrics
-// app.get('/api/vi/fabrics', (req, res)=>{
-//   Fabric.find({}, (error, allFabrics)=>{
-//       res.render('Index', {
-//           fabrics: allFabrics
-//       });
-//   });
-// });
+//midleware
+app.use(express.urlencoded({extended:true}));
+app.use(methodOverride('_method'))
 
-// app.get('/api/vi/fabrics', (req, res)=>{
-//   res.send('Index');
-// });
+//setting up views
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine()); //initializing engine
 
-// //render Index
-// app.get('/api/vi/fabrics', (req, res)=>{
-//   res.render('Index');
-// });
+//signature for git route
+app.get('/api/v1/', (req, res) => {
+  console.log(` welcome page `);
+  res.send('Welcome to House of Mozes');
+  
+});
+
+//Index route render all fabrics
+app.get('/api/vi/fabrics', (req, res)=>{
+  Fabric.find({}, (error, allFabrics)=>{
+      res.render('Index', {
+          fabrics: allFabrics
+      });
+  });
+});
+
+//Index page
+app.get('/api/v1/fabrics', (req, res) => {
+  // console.log(` fabrics index`);
+  res.send('House of Mozes');
+});
+  
+
+//render Index
+app.get('/api/vi/fabrics', (req, res)=>{
+  res.render('Index');
+});
 
 
 // //create route create data in MongoDB
@@ -42,11 +62,9 @@ app.get('/api/v1/', (req, res) => {
 //   });
 // });
 
-// app.get('/api/v1/fabrics/new', (req, res)=>{
-//   res.render('New');
-// });
-
-
+app.get('/api/v1/fabrics/new', (req, res)=>{
+  res.render('New');
+});
 
 
 
