@@ -30,7 +30,7 @@ app.get('/api/v1/', (req, res) => {
 
 //Index route render all fabrics
 app.get('/api/vi/fabrics', (req, res)=>{
-  Fabric.find({}, (error, allFabrics)=>{
+  fabrics.find({}, (error, allFabrics)=>{
       res.render('Index', {
           fabrics: allFabrics
       });
@@ -42,11 +42,37 @@ app.get('/api/v1/fabrics', (req, res) => {
   // console.log(` fabrics index`);
   res.send('House of Mozes');
 });
-  
+
+// app.get('/api/v1/fabrics/:id', function(req, res) {
+//   Fabrics.findById(req.params.id, (err, foundFabrics) => {
+//     res.send(foundFabrics)
+    
+//   })
+// })
+
+//Edit Page
+app.get('/api/v1/fabrics/:id/edit', (req, res) => {
+  fabrics.findById(req.params.id, (error, foundFabric) => {
+    if(!error) {
+      res.render('Edit', {
+        fabric: foundFabric
+      })
+    } else {
+      res.send({
+        message: error.message
+      })
+    }
+  })
+})
 
 //render Index
 app.get('/api/vi/fabrics', (req, res)=>{
   res.render('Index');
+});
+
+//render New
+app.get('/api/vi/fabrics/new', (req, res)=>{
+  res.render('New');
 });
 
 
