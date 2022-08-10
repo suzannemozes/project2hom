@@ -1,32 +1,88 @@
 const Data = [
   {
-    name:'linen',
-    colors:'pink'
-    amount: '10'
-    stock: '5'
-    description: 'tk'
-    category: '' //required
-    subcategory: '' // not required
-    washed:true
-    img:
-    isbn: "tk"
-    tags: 
+  name: 'Floral Dog Bandana',
+  material: 'canvas',
+  fabriccontent1: '20',
+  fabriccontent1a: 'linen',
+  fabriccontent2: '80',
+  fabriccontent2a: 'cotton',
+  pattern: 'floral',
+  fabricdesigner: "Rifle Paper Co.",
+  fabriccollection: 'English Garden',
+  color: 'pink',
+  color2: 'natural',
+  color3:  'peach',
+  description: 'The dog bandana is available in three sizes.',
+  category: 'apparel',
+  category2: 'dog',
+  category2: 'dog',
+  image:  src= https://imgur.com/xau5UUX,
+  isbn: '10001',
+  stock: '5',
+  price: '20',
+  garment: false,
+  home: false,
+  pillow: false,
+  upholstery: false,
+  remnant: false,
+  organic: true
 },
 {
-    name:'cotton',
-    color:'pink',
-    amount: '10'
-    stock: '5'
-    description: 'tk'
-    category: 'fabric'
-    washed:true
-    img:
-    isbn: "tk"
+    name: 'Piparo Fushia',
+    length: '42 inches',
+    width:  '45 inches',
+    material: 'jacquard',
+    fabriccontent1: '37',
+    fabriccontent1a: 'poly',
+    fabriccontent2: '37',
+    fabriccontent2a: 'viscose',
+    fabriccontent3: '26',
+    fabriccontent3a: 'linen',
+    pattern: 'abstract',
+    pattern2: 'puzzle',
+    fabricdesigner: 'James Hare',
+    color: 'pink',
+    color2: 'gray',
+    category: 'upholstery',
+    image: https://imgur.com/ou4pbe0,
+    isbn: '10002',
+    stock: '1',
+    tag1: 'remnant',
+    price: '85',
+    garment: false,
+    home: true,
+    pillow: true,
+    upholstery: true,
+    remnant: true,
+    organic: false
+
 {
-    name:'avocado',
-    color:'green',
-    readyToBattle:true
+    name: 'Turkish Pomegranites in Red',
+    length: '52 inches',
+    width: '42 inches',
+    material: linen,
+    fabriccontent1: '100',
+    fabriccontent1a: 'linen',
+    pattern: 'fruit',
+    pattern2: 'floral',
+    fabricdesigner: { type: String, required: false },
+    fabriccollection: { type: String, required: false },
+    color: 'red',
+    color2: 'blue',
+    color3: 'green',
+    category: 'table linen',
+    category2: 'home',
+    image: https://imgur.com/yDQKJlp,
+    isbn: '10003',
+    stock: '1',
+    tag1: 'tablecloth',
+    price: '50',
+    garment: true,
+    home: true,
+    pillow: true,
+    upholstery: false,
+    remnant: true
+    organic: false
 }
-]
 
 module.exports = fabricData

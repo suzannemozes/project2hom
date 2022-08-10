@@ -23,12 +23,26 @@ DELETE | /api/v1/fabrics/:id | delete a fabric |
 
 ### List of Features / User Stories 
 * Typically a short list of the features / user stories that you planned during the development phase of the project
-* To provide more detail, you can show how you categorized these features into Bronze, Silver and gold Levels and indicate which features you complete / have yet to complete
+*
+    When a user goes to the /fabrics route they will see an index of pokemon: the names of each fabric or product rendered to the page.
+
+    When a user clicks on the name of the fabric, they will be taken to that fabric's show page, and will see the fabric's name, description, price and image.
+
+    When a user goes to /fabric/new a user sees a form that allows them to create a brand new product, and then redirects the user back to /fabric
+
+    When a user goes to the show page there will be two buttons one that allows them to delete the fabric and get taken back to the Index page and one that takes them to /fabric/:id/edit that shows them a form that allows them to edit the fabric data
+
 
 
 ### List of Technologies  
 * Often you will want to list the technologies you used to create the project
 * This typically would consist of of all primary languages, frameworks, and libraries your app is composed of
+
+    JavaScript
+    Express
+    Node
+    JSX
+
 * This is particularly important when it comes to recruiters scanning your projects for keywords
 
 ### Installation Instructions / Getting Started  
