@@ -37,7 +37,7 @@ class Index extends React.Component {
                             );
                         })}
                     </ul>
-                    <a href="/api/v1"><button type='submit'><h3>Back to Main Directory!</h3></button></a><br/>
+                    <a href="/api/v1"><button><h3>Back to Main Directory!</h3></button></a><br/>
                 </div>
         )
     }

@@ -63,22 +63,6 @@ app.delete("/api/v1/fabrics/:id", (req, res) => {
   });
 });
 
-// Render Edit Page
-app.get("/api/v1/fabrics/:id/edit", (req, res) => {
-  console.log('in edit function')
-  Fabrics.findById(req.params.id, (err, foundFabric) => {
-    if (!err) {
-      res.render("Edit", {
-        fabric: foundFabric,
-      });
-    } else {
-      res.send({
-        msg: err.message,
-      });
-    }
-  });
-});
-
 //Put new information in DB
 app.put("/api/v1/fabrics/:id", (req, res) => {
   Fabrics.findByIdAndUpdate(
@@ -102,6 +86,22 @@ app.get("/api/v1/fabrics/:id", (req, res) => {
     res.render('Show', {
       fabrics: foundFabric,
     });
+  });
+});
+
+// Render Edit Page
+app.get("/api/v1/fabrics/:id/edit", (req, res) => {
+  console.log('in edit function')
+  Fabrics.findById(req.params.id, (err, foundFabric) => {
+    if (!err) {
+      res.render("Edit", {
+        fabric: foundFabric,
+      });
+    } else {
+      res.send({
+        msg: err.message,
+      });
+    }
   });
 });
 

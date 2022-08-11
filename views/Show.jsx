@@ -14,7 +14,7 @@ class Show extends React.Component {
               <h2>{fabrics.name}</h2>
               <img src={fabrics.image}></img>
 
-              <a href="/api/v1"><button><h3>Back to Main Directory!</h3></button></a><br/> ///NOT WORKING DON'T UNDERSTAND 
+              <a href="/api/v1"><button><h3>Back to Main Directory!</h3></button></a><br/>
 
               <a href="/api/v1/fabrics"><button><h3>View Index</h3></button></a><br/>
               

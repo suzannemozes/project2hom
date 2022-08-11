@@ -15,6 +15,7 @@ class Edit extends React.Component {
                     Image: <input type="text" name="image" placeholder='url.jpg'/><br/>
                     <input type="submit" name="" value="Edit Fabric"/>
                 </form>
+                <a href="/api/v1"><button><h3>Back to Main Directory!</h3></button></a><br/>
             </div>
         )
     }
