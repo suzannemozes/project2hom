@@ -5,6 +5,7 @@ const app = express();
 const Fabric = require('./models/fabrics');
 const port = process.env.PORT || 3003
 const methodOverride = require('method-override');
+const Fabrics = require('./models/fabrics');
 // const fabricData = require('./api/v1/utilities/fabricData')
 
 //DB Connection
@@ -13,7 +14,7 @@ mongoose.connection.once('open', ()=> {
     console.log('connected to mongo');
 });
 
-//midleware
+//Middleware
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'))
 
@@ -23,79 +24,85 @@ app.engine('jsx', require('express-react-views').createEngine()); //initializing
 
 //signature for git route
 app.get('/api/v1/', (req, res) => {
-  console.log(` welcome page `);
-  res.send('Welcome to House of Mozes');
-  
+  res.render('Home');
 });
 
+  
 //Index route render all fabrics
 app.get('/api/v1/fabrics', (req, res)=>{
   Fabric.find({}, (error, allFabrics)=>{
       res.render('Index', {
-          fabrics: allFabrics
+          fabrics: allFabrics,
       });
   });
 });
 
-// //Index page
-// app.get('/api/v1/fabrics', (req, res) => {
-//   console.log(` fabrics index`);
-//   res.send('House of Mozes');
-// });
-
-// app.get('/api/v1/fabrics/:id', function(req, res) {
-//   Fabric.findById(req.params.id, (err, foundFabrics) => {
-//     res.send(foundFabrics)
-//     console.log(req.body)
-    
-//   })
-// })
-
-// //Edit Page
-// app.get('/api/v1/fabrics/:id/edit', (req, res) => {
-//   Fabric.findById(req.params.id, (error, foundFabric) => {
-//     if(!error) {
-//       res.render('Edit', {
-//         fabric: foundFabric
-//       })
-//     } else {
-//       res.send({
-//         message: error.message
-//       })
-//     }
-//   })
-// })
-
-//render Index
-// app.get('/api/v1/fabrics', (req, res)=>{
-//   res.render('Index');
-// });
-
-//create route create data in MongoDB
-app.post('/api/v1/fabrics/', (req, res)=>{
-  // if(req.body.upholstery === 'on'){ //if checked, req.body.readyToEat is set to 'on'
-  //     req.body.upholstery = true;
-  // } else { //if not checked, req.body.readyToEat is undefined
-  //     req.body.upholstery = false;
-  // }
-  Fabric.create(req.body, (error, createdFabric)=>{
-      res.redirect('/api/v1/fabrics');
-  });
-});
-
+//Create Fabrics Add Page
 app.get('/api/v1/fabrics/new', (req, res)=>{
   res.render('New');
 });
 
-// // Update route
-// app.put('/api/v1/fabrics/:id', (req, res) => {
-//   Fabric.findByIdAndUpdate(req.params.id, req.body, {
-//       new: true
-//   }, (error, fabric) => {
-//       res.redirect(`/api/v1/fabrics/${req.params.id}`)
-//   })
-// })
+//Create Fabrics POST route
+app.post('/api/v1/fabrics/', (req, res)=>{
+  let name = req.body.name.split("");
+  name[0] = name[0].toUpperCase();
+  req.body.name = name.join("");
 
+  Fabrics.create(req.body, (error, createdFabric)=>{
+      res.redirect('/api/v1/fabrics');
+  });
+});
+
+
+//Delete Route
+app.delete("/api/v1/fabrics/:id", (req, res) => {
+  console.log('in delete function')
+  //First arg is ID we want to delet, 2nd arg is callback function
+  Fabrics.findByIdAndRemove(req.params.id, (err, data) => {
+    res.redirect("/api/v1/fabrics");
+  });
+});
+
+// Render Edit Page
+app.get("/api/v1/fabrics/:id/edit", (req, res) => {
+  Fabrics.findById(req.params.id, (err, foundFabric) => {
+    if (!err) {
+      res.render("Edit", {
+        fabric: foundFabric,
+      });
+    } else {
+      res.send({
+        msg: err.message,
+      });
+    }
+  });
+});
+
+//Put new information in DB
+app.put("/api/v1/fabrics/:id", (req, res) => {
+  Fabrics.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    {
+      new: true,
+    },
+    (error, fabric) => {
+      res.redirect(`/fabrics/${req.params.id}`);
+    }
+  );
+});
+
+//Show route
+app.get("/api/v1/fabrics/:id", (req, res) => {
+
+  Fabrics.findById(req.params.id, (err, foundFabric) => {
+    console.log("in find by id")
+    console.log(foundFabric)
+    res.render('Show', {
+      fabrics: foundFabric,
+    });
+  });
+});
 
 app.listen(3000, () => {
   console.log(`listening on http://localhost:${port} `);
