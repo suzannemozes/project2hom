@@ -65,6 +65,7 @@ app.delete("/api/v1/fabrics/:id", (req, res) => {
 
 // Render Edit Page
 app.get("/api/v1/fabrics/:id/edit", (req, res) => {
+  console.log('in edit function')
   Fabrics.findById(req.params.id, (err, foundFabric) => {
     if (!err) {
       res.render("Edit", {

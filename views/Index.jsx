@@ -31,11 +31,13 @@ class Index extends React.Component {
                                     <form action={`/api/v1/fabrics/${fabric.id}?_method=DELETE`} method="POST">
                                   <button type="submit"><h4>Delete Entry</h4></button>
                                   </form>
-                                    <a href={`/api/v1/fabrics/${fabric.id}/edit`}>Edit fabric</a>
+                                    {/* <a href={`/api/v1/fabrics/${fabric.id}/edit`}>Edit fabric</a> */}
+                                    <a href={`/api/v1/fabrics/${fabric.id}/edit`}><button type="submit"><h4>Edit Entry</h4></button></a>
                                 </li>
                             );
                         })}
                     </ul>
+                    <a href="/api/v1"><button type='submit'><h3>Back to Main Directory!</h3></button></a><br/>
                 </div>
         )
     }

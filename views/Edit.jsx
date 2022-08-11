@@ -1,4 +1,6 @@
 const React = require('react')
+const Fabrics = require('../models/fabrics');
+
 
 class Edit extends React.Component {
     render() {
@@ -6,10 +8,11 @@ class Edit extends React.Component {
         return (
             <div>
                 <h1>Edit Fabrics page</h1>
-                <form action={`/api/v1/fabrics/:${fabrics.id}?_method=PUT`} method="POST">
-                    Name: <input type="text" name="name" /><br/>
-                    Color: <input type="text" name="color" /><br/>
-                    Image: <input type="text" name="image" /><br/>
+                {/* NOTE: action will be the route, method will be the HTTP verb */}
+                <form action={`/api/v1/fabrics/${fabrics.id}?_method=PUT`} method="POST">
+                    Name: <input type="text" name="name" placeholder='Name'/><br/>
+                    Color: <input type="text" name="color" placeholder='Color'/><br/>
+                    Image: <input type="text" name="image" placeholder='url.jpg'/><br/>
                     <input type="submit" name="" value="Edit Fabric"/>
                 </form>
             </div>
