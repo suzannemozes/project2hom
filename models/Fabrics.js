@@ -39,6 +39,6 @@ const fabricsSchema = new mongoose.Schema({
 
 });
 
-const Fabrics = mongoose.model('Fabric', fabricsSchema);
+const fabrics = mongoose.model('Fabric', fabricsSchema);
 
 module.exports = fabrics;
