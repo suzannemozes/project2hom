@@ -60,7 +60,7 @@ app.put("/api/v1/fabrics/:id", (req, res) => {
       new: true,
     },
     (error, fabric) => {
-      res.redirect(`/fabrics/${req.params.id}`);
+      res.redirect(`/api/v1/fabrics/${req.params.id}`);
     }
   );
 });
