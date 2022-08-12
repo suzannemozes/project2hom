@@ -37,22 +37,10 @@ app.get('/api/v1/fabrics', (req, res)=>{
   });
 });
 
-//Create Fabrics Add Page
+//Fabrics Add Page
 app.get('/api/v1/fabrics/new', (req, res)=>{
   res.render('New');
 });
-
-//Create Fabrics POST route
-app.post('/api/v1/fabrics/', (req, res)=>{
-  let name = req.body.name.split("");
-  name[0] = name[0].toUpperCase();
-  req.body.name = name.join("");
-
-  Fabric.create(req.body, (error, createdFabric)=>{
-      res.redirect('/api/v1/fabrics');
-  });
-});
-
 
 //Delete Route
 app.delete("/api/v1/fabrics/:id", (req, res) => {
@@ -77,15 +65,14 @@ app.put("/api/v1/fabrics/:id", (req, res) => {
   );
 });
 
-//Show route
-app.get("/api/v1/fabrics/:id", (req, res) => {
+//Create Fabrics POST route
+app.post('/api/v1/fabrics/', (req, res)=>{
+  let name = req.body.name.split("");
+  name[0] = name[0].toUpperCase();
+  req.body.name = name.join("");
 
-  Fabric.findById(req.params.id, (err, foundFabric) => {
-    console.log("in find by id")
-    console.log(foundFabric)
-    res.render('Show', {
-      fabrics: foundFabric,
-    });
+  Fabric.create(req.body, (error, createdFabric)=>{
+      res.redirect('/api/v1/fabrics');
   });
 });
 
@@ -104,6 +91,18 @@ app.get("/api/v1/fabrics/:id/edit", (req, res) => {
         msg: err.message,
       });
     }
+  });
+});
+
+//Show route
+app.get("/api/v1/fabrics/:id", (req, res) => {
+
+  Fabric.findById(req.params.id, (err, foundFabric) => {
+    console.log("in find by id")
+    console.log(foundFabric)
+    res.render('Show', {
+      fabrics: foundFabric,
+    });
   });
 });
 

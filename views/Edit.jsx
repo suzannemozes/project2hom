@@ -12,7 +12,9 @@ class Edit extends React.Component {
                 <form action={`/api/v1/fabrics/${fabric.id}?_method=PUT`} method="POST">
                     Name: <input type="text" name="name" placeholder='Name'/><br/>
                     Color: <input type="text" name="color" placeholder='Color'/><br/>
-                    Image: <input type="text" name="image" placeholder='url.jpg'/><br/>
+                    Image: <input type="text" name="image" placeholder='URL.jpg'/><br/>
+                    Stock: <input type="text" name="stock" placeholder='5'/><br/>
+                    Category: <input type="text" name="category" placeholder='remant, clothing, dog'/><br/>
                     <input type="submit" name="" value="Edit Fabric"/>
                 </form>
                 <a href="/api/v1"><button><h3>Back to Main Directory!</h3></button></a><br/>
