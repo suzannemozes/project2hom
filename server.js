@@ -94,10 +94,12 @@ app.get("/api/v1/fabrics/:id/edit", (req, res) => {
   console.log('in edit function')
   Fabrics.findById(req.params.id, (err, foundFabric) => {
     if (!err) {
+      console.log('in edit IF function')
       res.render("Edit", {
         fabric: foundFabric,
       });
     } else {
+      console.log('in edit ELSE function')
       res.send({
         msg: err.message,
       });
