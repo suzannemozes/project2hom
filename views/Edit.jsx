@@ -4,12 +4,12 @@ const Fabrics = require('../models/fabrics');
 
 class Edit extends React.Component {
     render() {
-        const fabrics = this.props.fabrics
+        const fabric = this.props.fabric
         return (
             <div>
                 <h1>Edit Fabrics page</h1>
                 {/* NOTE: action will be the route, method will be the HTTP verb */}
-                <form action={`/api/v1/fabrics/${fabrics.id}?_method=PUT`} method="POST">
+                <form action={`/api/v1/fabrics/${fabric.id}?_method=PUT`} method="POST">
                     Name: <input type="text" name="name" placeholder='Name'/><br/>
                     Color: <input type="text" name="color" placeholder='Color'/><br/>
                     Image: <input type="text" name="image" placeholder='url.jpg'/><br/>

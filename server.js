@@ -5,7 +5,7 @@ const app = express();
 const Fabric = require('./models/fabrics');
 const port = process.env.PORT || 3003
 const methodOverride = require('method-override');
-const Fabrics = require('./models/fabrics');
+// const Fabrics = require('./models/fabrics');
 // const fabricData = require('./api/v1/utilities/fabricData')
 
 //DB Connection
@@ -48,7 +48,7 @@ app.post('/api/v1/fabrics/', (req, res)=>{
   name[0] = name[0].toUpperCase();
   req.body.name = name.join("");
 
-  Fabrics.create(req.body, (error, createdFabric)=>{
+  Fabric.create(req.body, (error, createdFabric)=>{
       res.redirect('/api/v1/fabrics');
   });
 });
@@ -58,14 +58,14 @@ app.post('/api/v1/fabrics/', (req, res)=>{
 app.delete("/api/v1/fabrics/:id", (req, res) => {
   console.log('in delete function')
   //First arg is ID we want to delet, 2nd arg is callback function
-  Fabrics.findByIdAndRemove(req.params.id, (err, data) => {
+  Fabric.findByIdAndRemove(req.params.id, (err, data) => {
     res.redirect("/api/v1/fabrics");
   });
 });
 
 //Put new information in DB
 app.put("/api/v1/fabrics/:id", (req, res) => {
-  Fabrics.findByIdAndUpdate(
+  Fabric.findByIdAndUpdate(
     req.params.id,
     req.body,
     {
@@ -80,7 +80,7 @@ app.put("/api/v1/fabrics/:id", (req, res) => {
 //Show route
 app.get("/api/v1/fabrics/:id", (req, res) => {
 
-  Fabrics.findById(req.params.id, (err, foundFabric) => {
+  Fabric.findById(req.params.id, (err, foundFabric) => {
     console.log("in find by id")
     console.log(foundFabric)
     res.render('Show', {
@@ -92,7 +92,7 @@ app.get("/api/v1/fabrics/:id", (req, res) => {
 // Render Edit Page
 app.get("/api/v1/fabrics/:id/edit", (req, res) => {
   console.log('in edit function')
-  Fabrics.findById(req.params.id, (err, foundFabric) => {
+  Fabric.findById(req.params.id, (err, foundFabric) => {
     if (!err) {
       console.log('in edit IF function')
       res.render("Edit", {
