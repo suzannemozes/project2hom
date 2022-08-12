@@ -16,7 +16,8 @@ mongoose.connection.once('open', ()=> {
 
 //Middleware
 app.use(express.urlencoded({extended:true}));
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
+app.use(express.static("public"));
 
 //setting up views
 app.set('view engine', 'jsx');
