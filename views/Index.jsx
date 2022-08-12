@@ -6,7 +6,7 @@ const myStyle = {
 
 class Index extends React.Component {
     render() {
-        const { fabrics } = this.props;
+        const fabrics = this.props.fabrics;
         return (
                 <div>
                   <h1>Fabric Index Page</h1>

@@ -15,21 +15,21 @@ const fabricsSchema = new mongoose.Schema({
   // pattern2: { type: String, required: false },
   // fabricdesigner: { type: String, required: false },
   // fabriccollection: { type: String, required: false },
-  color: { type: String, required: true },
+  color: { type: String, required: false },
   // color2: { type: String, required: false },
   // color3: { type: String, required: false },
   // description: { type: String, required: false },
   category: { type: String, required: false },
   // category2: { type: String, required: false },
   // category3: { type: String, required: false },
-  image: { type: String, required: true },
+  image: { type: String, required: false },
   // image2: { type: String, required: false },
   // isbn: { type: String, required: false },
-  stock: { type: String, required: true },
+  stock: { type: String, required: false },
   // tag1: { type: String, required: false },
   // tag2: { type: String, required: false },
   // tag3: { type: String, required: false },
-  // price: { type: String, required: false },
+  price: { type: String, required: false },
   // garment: Boolean,
   // home: Boolean,
   // pillow: Boolean,
@@ -41,4 +41,4 @@ const fabricsSchema = new mongoose.Schema({
 
 const Fabrics = mongoose.model('Fabric', fabricsSchema);
 
-module.exports = Fabrics;
+module.exports = fabrics;

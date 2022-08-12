@@ -11,6 +11,7 @@ class New extends React.Component {
                 Image: <input type="text" name="image" /><br/>
                 Stock: <input type="text" name="stock" /><br/>
                 Category: <input type="text" name="category" /><br/>
+                Price: <input type="text" name="price" /><br/>
                 <input type="submit" name="" value="Create Fabric"/>
              </form>
         </div>);
