@@ -5,15 +5,29 @@ class Index extends React.Component {
         const fabrics = this.props.fabrics;
         return (
           <html>
-            <head>
-              <title>tk</title>
-              <link rel="stylesheet" href="/css/index.css" ></link>
-            </head>
-                <div className='tktktkt'>
-                  <h1>Fabric Index Page</h1>
+             <head>
+                <title>{fabrics.name}</title>
+                <link rel="stylesheet" href="/css/index.css"/>
+                <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
+                <link href="https://fonts.googleapis.com/css?family=Ramaraja|Karla|Oswald|" rel="stylesheet"></link>
+             </head>
+             <body>
+              
+                <div className='spacer'>Shop with Free Delivery!</div>
+
+                <div className='banner'>
+                  <div className='banner1'>
+                  <div>House of Mozes</div></div>
+                  <div className='banner2'>
+                    <p > <a className='banner3'>shop</a> <a className='banner3'>add</a> <a className='banner3'>delete</a> <a className='banner3'>update</a>  </p></div>
+                </div>
+                  
+                <div className='gridContainer'>
+                  
                   <nav>
                       <a href="/api/v1/fabrics/new/">Create a new fabric</a>
-                    </nav>
+                  </nav>
                   
                   <ul>
                         {fabrics.map((fabric) => {
@@ -34,10 +48,11 @@ class Index extends React.Component {
                                 </li>
                             );
                         })}
-                    </ul>
+                  </ul>
                     <a href="/api/v1"><button><h3>Back to Main Directory!</h3></button></a><br/>
                 </div>
-              </html>
+              </body>
+           </html>
         )
     }
   }
