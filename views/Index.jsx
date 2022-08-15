@@ -29,38 +29,30 @@ class Index extends React.Component {
                 </div>
                 </div>
                   
-                <div className='containerIndex'>
-                  
-                  <nav>
-                      <a href="/api/v1/fabrics/new/">Create a new fabric</a>
-                  </nav>
-                  
-                  <ul >
+                <div >
+                  <div className='container'>
                         {fabrics.map((fabric) => {
                           console.log(fabric)
                             return (
                                 
-                                <li> 
-                                  <div>  
+                                <div className='item'> 
+                                  <div >  
                                   <a href={`/api/v1/fabrics/${fabric.id}`}><img src={fabric.image} alt={fabric.alt} className='bgSizeCover' /></a><br></br>
 
-                                  <a href={`/api/v1/fabrics/${fabric.id}`}> 
+                                  <h3><a href={`/api/v1/fabrics/${fabric.id}`}> 
                                     {fabric.name.charAt(0).toUpperCase() + fabric.name.slice(1)}{' '} 
                                     in {' '} 
                                     {fabric.color.charAt(0).toUpperCase() + fabric.color.slice(1)} 
-                                    </a> 
+                                    </a> </h3>
                                     <br></br>
                                     ${fabric.price} USD/yd 
-                                  
-                                    <a href={`/api/v1/fabrics/${fabric.id}/edit`}><button type="submit">Edit</button></a>
-
                                     </div>
-                                </li>
+                                </div>
                                
                             );
                         })}
                         
-                  </ul>
+                  </div>
               </div>
               </body>
               <footer>
@@ -71,3 +63,4 @@ class Index extends React.Component {
     }
   }
   module.exports = Index;
+

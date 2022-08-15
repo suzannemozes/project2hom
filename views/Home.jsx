@@ -30,14 +30,14 @@ class Home extends React.Component {
                 </div>
                 </div> */}
               
-                <div className='section contact-card'>
+                <div className='section'>
                   <h2 className='section-header'>House of Mozes</h2>
-                <div className='contact-info'>
-                    <a class='grid-item-header grid-item-header-left'>
+                <div className='boxLeft'>
+                    <div class='grid-item-header grid-item-header-left'>
                         Curated
                         <br></br>
                         Textiles
-                    </a>
+                    </div>
                     <p class="grid-item-text grid-item-text-left">We love to collect remnant textiles and make one-of-a-kind designs with them. We speak, teach, and consult at tech companies and startups. 
                       <a href="https://instagram.com/houseofmozes"> Say hi! </a>
                       <br></br>
