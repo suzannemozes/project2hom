@@ -6,20 +6,56 @@ class Edit extends React.Component {
     render() {
         const fabric = this.props.fabric
         return (
-            <div>
-                <h1>Edit Fabrics page</h1>
-                {/* NOTE: action will be the route, method will be the HTTP verb */}
+          <html>
+            <head>
+               <title>Edit</title>
+               <link rel="stylesheet" href="/css/index.css"/>
+               <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+               <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
+               <link href="https://fonts.googleapis.com/css?family=Ramaraja|Karla|Oswald|" rel="stylesheet"></link>
+            </head>
+            <body>
+             
+            <div> 
+               <div className='spacer'>Shop with Free Delivery! Promo Code: PERSCHOLASRTT14</div>
+
+               <div className='bannerContainer'>
+                 <div className='bannerLeft'>
+                 <div><a href="/api/v1/">House of Mozes</a></div></div>
+                 <div className='bannerRight'>
+                  
+                     <a className='subBannerRight' href="/api/v1/fabrics">shop</a> 
+            
+                     <a className='subBannerRight' href="/api/v1/fabrics/new">add</a> 
+                     <a className='subBannerRight'>journal</a>
+                </div>
+                </div>
+                </div>
+
                 <form action={`/api/v1/fabrics/${fabric.id}?_method=PUT`} method="POST">
                     Name: <input type="text" name="name" defaultValue={fabric.name} /><br/>
                     Color: <input type="text" name="color" defaultValue={fabric.color} /><br/>
                     Image: <input type="text" name="image" defaultValue={fabric.image} /><br/>
                     Stock: <input type="text" name="stock" defaultValue={fabric.stock} /><br/>
-                    Category: <input type="text" name="category" /><br/>
-                    <input type="submit" name="" value="Edit Fabric"/>
+                    Category: <input type="text" name="category" defaultValue={fabric.category}/><br/>
+                    Price: <input type="text" name="price" defaultValue={fabric.price} /><br/>
+                    Length: <input type="text" name="length" defaultValue={fabric.length}/><br/>
+                    Width: <input type="text" name="width" defaultValue={fabric.width}/><br/>
+                    Material: <input type="text" name="material" defaultValue={fabric.material} /><br/>
+                    Designer: <input type="text" name="designer" defaultValue={fabric.designer}/><br/>
+                    Category2: <input type="text" name="category2" defaultValue={fabric.category2}/><br/>
+                    Image 2: <input type="text" name="image2" defaultValue={fabric.image2} /><br/>
+                    Alt: <input type="text" name="alt" defaultValue={fabric.alt} /><br/>
+                    <input type="submit" name="" value="Save Edits"/>
                 </form>
                 <a href="/api/v1"><button><h3>Back to Main Directory!</h3></button></a><br/>
-            </div>
+
+                <a href="/api/v1/fabrics"><button><h3>View Index</h3></button></a>
+               
+              </body>
+           </html>
         )
     }
-}
+  }
+
 module.exports = Edit;

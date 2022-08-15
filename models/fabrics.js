@@ -13,7 +13,7 @@ const fabricsSchema = new mongoose.Schema({
   // fabriccontent3a: { type: String, required: true },
   // pattern: { type: String, required: false },
   // pattern2: { type: String, required: false },
-  fabricdesigner: { type: String, required: false },
+  designer: { type: String, required: false },
   // fabriccollection: { type: String, required: false },
   color: { type: String, required: false },
   // color2: { type: String, required: false },

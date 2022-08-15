@@ -24,35 +24,74 @@ class Show extends React.Component {
         <input type="hidden" name="designer" value={fabrics.designer} />
         <input type="hidden" name="category2" value={fabrics.category2}/>
         <input type="hidden" name="image2" value={fabrics.image2} />
+        <input type="hidden" name="alt" value={fabrics.alt} />
         <input type="submit" name="" value="Add to Cart"/>
      </form>;
       }
       return(
           <html >
+
           <head>
               <title>{fabrics.name}</title>
+              <link rel="stylesheet" href="/css/index.css"/>
+              <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+              <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
+              <link href="https://fonts.googleapis.com/css?family=Ramaraja|Karla|Oswald|" rel="stylesheet"></link>
           </head>
+
           <body >
-              <h1>{fabrics.name}</h1>
-              <p>                
-                Stock: {fabrics.stock}
-              <h3>Price: ${fabrics.price}</h3>
-              {btn}
-              <img width={200} src={fabrics.image}></img>
-              <h2>Available: {qty}</h2>
-              </p>
+          <div> 
+               <div className='spacer'>Shop with Free Delivery! Promo Code: PERSCHOLASRTT14</div>
 
-              {/* HOME BUTTON */}
-              <a href="/api/v1"><button><h3>HOME</h3></button></a><br/>
+               <div className='bannerContainer'>
+                 <div className='bannerLeft'>
+                 <div><a href="/api/v1/">House of Mozes</a></div></div>
+                 <div className='bannerRight'>
+                  
+                     <a className='subBannerRight' href="/api/v1/fabrics">shop</a> 
+            
+                     <a className='subBannerRight' href="/api/v1/fabrics/new">add</a> 
+                     <a className='subBannerRight'>journal</a>
+                </div>
+                </div>
+                </div>
 
-              {/* EDIT BUTTON*/}
-              {/* <a href="/api/v1/fabrics/:id/edit"><button><h3>EDIT FABRIC</h3></button></a> */}
+            <div className='containerShow'>
+            <div className='showLeft'> 
+              
+              <img width={400} src={fabrics.image}></img><br></br> 
+              <h1>{btn}</h1>
+              </div> 
+              
+              <div className='showRight'>
+              <h1>{fabrics.name} by {fabrics.designer} </h1>
 
-              <a href={`/api/v1/fabrics/${fabrics.id}/edit`}><button type="submit"><h4>Edit Entry</h4></button></a><br/>
+              <h2>Price: ${fabrics.price}</h2>
+              <h3>Stock: {qty}</h3>
+              <h3>Item Description</h3><br></br>
+              <h2>Stock: {qty}</h2>
+                Length: {fabrics.length} <br/>
+                Width: {fabrics.width} <br/>
+                Material: {fabrics.material} <br/>
+                Color: {fabrics.color} <br/>
+                Categories: {fabrics.category}, {fabrics.category2} <br/>
+                <br/>
+             </div>
+             </div>
 
-              {/* BACK TO INDEX BUTTON */}
-              <a href="/api/v1/fabrics"><button><h3>View Index</h3></button></a><br/>
+             <div className='footer'> 
+              {/* DELETE */}
+              <form action={`/api/v1/fabrics/${fabrics.id}?_method=DELETE`} method="POST">
+              <button type="submit">Delete</button></form>
 
+              {/* EDIT */}
+              <a href={`/api/v1/fabrics/${fabrics.id}/edit`}><button type="submit">Edit Entry</button></a><br/>
+              
+              
+              {/* INDEX */}
+              <a href="/api/v1/fabrics"><button>View Index</button></a><br/>
+              {/* <a href="/api/v1"><button><h3>View All Products</h3></button></a><br/> */}
+              </div>
               
           </body>
           </html>

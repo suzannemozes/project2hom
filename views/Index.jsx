@@ -13,45 +13,59 @@ class Index extends React.Component {
                 <link href="https://fonts.googleapis.com/css?family=Ramaraja|Karla|Oswald|" rel="stylesheet"></link>
              </head>
              <body>
-              
-                <div className='spacer'>Shop with Free Delivery!</div>
+             <div> 
+               <div className='spacer'>Shop with Free Delivery! Promo Code: PERSCHOLASRTT14</div>
 
-                <div className='banner'>
-                  <div className='banner1'>
-                  <div>House of Mozes</div></div>
-                  <div className='banner2'>
-                    <p > <a className='banner3'>shop</a> <a className='banner3'>add</a> <a className='banner3'>delete</a> <a className='banner3'>update</a>  </p></div>
+               <div className='bannerContainer'>
+                 <div className='bannerLeft'>
+                 <div><a href="/api/v1/">House of Mozes</a></div></div>
+                 <div className='bannerRight'>
+                  
+                     <a className='subBannerRight' href="/api/v1/fabrics">shop</a> 
+            
+                     <a className='subBannerRight' href="/api/v1/fabrics/new">add</a> 
+                     <a className='subBannerRight'>journal</a>
+                </div>
+                </div>
                 </div>
                   
-                <div className='gridContainer'>
+                <div className='containerIndex'>
                   
                   <nav>
                       <a href="/api/v1/fabrics/new/">Create a new fabric</a>
                   </nav>
                   
-                  <ul>
+                  <ul >
                         {fabrics.map((fabric) => {
                           console.log(fabric)
                             return (
-                                <li>
-                                     The{' '}
-                                    <a href={`/api/v1/fabrics/${fabric.id}`}>
-                   
-                                        {fabric.name.charAt(0).toUpperCase() + fabric.name.slice(1)}</a>{' '} is {fabric.color}  <br></br>
-                                    <img width={200} src={fabric.image} />
-                                    <br />
-                                    <form action={`/api/v1/fabrics/${fabric.id}?_method=DELETE`} method="POST">
-                                  <button type="submit"><h4>Delete Entry</h4></button>
-                                  </form>
-                                    {/* <a href={`/api/v1/fabrics/${fabric.id}/edit`}>Edit fabric</a> */}
-                                    <a href={`/api/v1/fabrics/${fabric.id}/edit`}><button type="submit"><h4>Edit Entry</h4></button></a>
+                                
+                                <li> 
+                                  <div>  
+                                  <a href={`/api/v1/fabrics/${fabric.id}`}><img src={fabric.image} alt={fabric.alt} className='bgSizeCover' /></a><br></br>
+
+                                  <a href={`/api/v1/fabrics/${fabric.id}`}> 
+                                    {fabric.name.charAt(0).toUpperCase() + fabric.name.slice(1)}{' '} 
+                                    in {' '} 
+                                    {fabric.color.charAt(0).toUpperCase() + fabric.color.slice(1)} 
+                                    </a> 
+                                    <br></br>
+                                    ${fabric.price} USD/yd 
+                                  
+                                    <a href={`/api/v1/fabrics/${fabric.id}/edit`}><button type="submit">Edit</button></a>
+
+                                    </div>
                                 </li>
+                               
                             );
                         })}
+                        
                   </ul>
-                    <a href="/api/v1"><button><h3>Back to Main Directory!</h3></button></a><br/>
-                </div>
+              </div>
               </body>
+              <footer>
+                <a href="/api/v1/fabrics/new"><button>Add New Product</button></a>
+              </footer>
            </html>
         )
     }
