@@ -24,7 +24,7 @@ app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine()); //initializing engine
 
 //signature for git route
-app.get('/api/v1/', (req, res) => {
+app.get('/', (req, res) => {
   res.render('Home');
 });
 
