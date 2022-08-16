@@ -12,22 +12,24 @@ class Index extends React.Component {
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
                 <link href="https://fonts.googleapis.com/css?family=Ramaraja|Karla|Oswald|" rel="stylesheet"></link>
              </head>
-             <body>
-             <div> 
-               <div className='spacer'>Shop with Free Delivery! Promo Code: PERSCHOLASRTT14</div>
+             <body >
+          <div> 
+            <div className='spacer'>Shop with Free Delivery! Promo Code: PERSCHOLASRTT14</div>
+            <div className='bannerContainer'>
+              <div className='bannerLeft'>
+                <div><a href="/">House of Mozes</a></div>
+              </div>
 
-               <div className='bannerContainer'>
-                 <div className='bannerLeft'>
-                 <div><a href="/api/v1/">House of Mozes</a></div></div>
-                 <div className='bannerRight'>
-                  
-                     <a className='subBannerRight' href="/api/v1/fabrics">shop</a> 
-            
-                     <a className='subBannerRight' href="/api/v1/fabrics/new">add</a> 
-                     <a className='subBannerRight'>journal</a>
-                </div>
-                </div>
-                </div>
+              <div className='bannerRight'>
+                <a className='subBannerRight' href="/api/v1/fabrics">shop</a> 
+                <a className='subBannerRight' href="/api/v1/fabrics/new">add</a> 
+                <a className='subBannerRight'>journal</a>
+                <a href="/api/v1/fabrics/dog" className='subBannerRight'>dogHouse</a>
+                <a href="/api/v1/fabrics/home" className='subBannerRight'>home by H.O.M</a>
+                <a href="/api/v1/fabrics/remnant" className='subBannerRight'>remnants</a>
+              </div>
+              </div>
+              </div>
                   
                 <div >
                   <div className='container'>

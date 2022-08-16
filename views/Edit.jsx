@@ -28,16 +28,19 @@ class Edit extends React.Component {
             
                      <a className='subBannerRight' href="/api/v1/fabrics/new">add</a> 
                      <a className='subBannerRight'>journal</a>
+                     <a href="/api/v1/fabrics/dog">DogHouse of Mozes</a>
+                     <a href="/api/v1/fabrics/home">Home by H.O.M.</a>
+                     <a href="/api/v1/fabrics/remnant">Remnants + Deadstock</a>
                 </div>
                 </div>
                 </div>
                 
               <div>
                 <div className='newBuffer'></div>
-                 <h1 className='formheader'>DELETE PRODUCT</h1>
+                 <h1 className='formheader'>edit PRODUCT</h1>
                  <div className='newBuffer'></div>
                 <div className="staatliches">
-                <form action={`/api/v1/fabrics/${fabric.category}/${fabric.id}?_method=PUT`} method="POST">
+                <form className="button" action={`/api/v1/fabrics/${fabric.category}/${fabric.id}?_method=PUT`} method="POST">
                     Name: <input type="text" name="name" defaultValue={fabric.name} /><br/>
                     Color: <input type="text" name="color" defaultValue={fabric.color} /><br/>
                     Image: <input type="text" name="image" defaultValue={fabric.image} /><br/>
