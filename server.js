@@ -118,6 +118,6 @@ app.get("/api/v1/fabrics/:category/:id", (req, res) => {
 
 
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log(`listening on http://localhost:${port} `);
 });
