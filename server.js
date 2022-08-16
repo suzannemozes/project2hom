@@ -97,7 +97,7 @@ app.get("/api/v1/fabrics/:category/:id/edit", (req, res) => {
   });
 });
 
-// //category route
+//Category route
 app.get('/api/v1/fabrics/:category', (req, res)=>{
   Fabric.find({category: req.params.category}, (error, allFabrics)=>{
       res.render('Index', {
