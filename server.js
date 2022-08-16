@@ -45,7 +45,6 @@ app.get('/api/v1/fabrics/new', (req, res)=>{
 
 //Delete Route
 app.delete("/api/v1/fabrics/:id", (req, res) => {
-  console.log('in delete function')
   //First arg is ID we want to delet, 2nd arg is callback function
   Fabric.findByIdAndRemove(req.params.id, (err, data) => {
     res.redirect("/api/v1/fabrics");
@@ -79,15 +78,12 @@ app.post('/api/v1/fabrics/', (req, res)=>{
 
 // Render Edit Page
 app.get("/api/v1/fabrics/:id/edit", (req, res) => {
-  console.log('in edit function')
   Fabric.findById(req.params.id, (err, foundFabric) => {
     if (!err) {
-      console.log('in edit IF function')
       res.render("Edit", {
         fabric: foundFabric,
       });
     } else {
-      console.log('in edit ELSE function')
       res.send({
         msg: err.message,
       });
@@ -97,15 +93,22 @@ app.get("/api/v1/fabrics/:id/edit", (req, res) => {
 
 //Show route
 app.get("/api/v1/fabrics/:id", (req, res) => {
-
   Fabric.findById(req.params.id, (err, foundFabric) => {
-    console.log("in find by id")
-    console.log(foundFabric)
     res.render('Show', {
       fabrics: foundFabric,
     });
   });
 });
+
+// //category route
+// app.get("/api/v1/fabrics/:category", (req, res) => {
+//   Fabric.findById(req.params.category, (err, allCategories) => {
+//     res.render('Category', {
+//       category: allCategories,
+//     });
+//   });
+// });
+
 
 app.listen(3000, () => {
   console.log(`listening on http://localhost:${port} `);

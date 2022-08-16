@@ -60,38 +60,38 @@ class Show extends React.Component {
             <div className='showLeft'> 
               
               <img width={400} src={fabrics.image}></img><br></br> 
-              <h1>{btn}</h1>
               </div> 
               
               <div className='showRight'>
+                <div>
               <h1>{fabrics.name} by {fabrics.designer} </h1>
 
               <h2>Price: ${fabrics.price}</h2>
               <h3>Stock: {qty}</h3>
               <h3>Item Description</h3><br></br>
-              <h2>Stock: {qty}</h2>
                 Length: {fabrics.length} <br/>
                 Width: {fabrics.width} <br/>
                 Material: {fabrics.material} <br/>
                 Color: {fabrics.color} <br/>
                 Categories: {fabrics.category}, {fabrics.category2} <br/>
                 <br/>
-             </div>
-             </div>
-
-             <div className='footer'> 
+                </div>
+                <div className='buttonContainer' width="300px"> 
               {/* DELETE */}
               <form action={`/api/v1/fabrics/${fabrics.id}?_method=DELETE`} method="POST">
               <button type="submit">Delete</button></form>
 
               {/* EDIT */}
-              <a href={`/api/v1/fabrics/${fabrics.id}/edit`}><button type="submit">Edit Entry</button></a><br/>
+              <a href={`/api/v1/fabrics/${fabrics.id}/edit`}><button type="submit">Edit Entry</button></a>
               
-              
+              <button>{btn}</button>
               {/* INDEX */}
-              <a href="/api/v1/fabrics"><button>View Index</button></a><br/>
+              <a href="/api/v1/fabrics"><button>View Index</button></a>
               {/* <a href="/api/v1"><button><h3>View All Products</h3></button></a><br/> */}
               </div>
+              
+             </div>
+             </div>
               
           </body>
           </html>

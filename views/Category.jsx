@@ -1,19 +1,21 @@
 const React = require('react');
 
-class Index extends React.Component {
-    render() {
-        const fabrics = this.props.fabrics;
-        return (
-          <html>
-             <head>
-                <title>{fabrics.name}</title>
-                <link rel="stylesheet" href="/css/index.css"/>
-                <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
-                <link href="https://fonts.googleapis.com/css?family=Ramaraja|Karla|Oswald|" rel="stylesheet"></link>
-             </head>
-             <body>
-             <div> 
+
+class Category extends React.Component {
+  render() {
+    const fabrics = this.props.fabrics;
+    return (
+      <html>
+          <head>
+              <title>{fabrics.category}</title>
+              <link rel="stylesheet" href="/css/index.css"/>
+              <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+              <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
+              <link href="https://fonts.googleapis.com/css?family=Ramaraja|Karla|Oswald|" rel="stylesheet"></link>
+          </head>
+
+          <body >
+          <div> 
                <div className='spacer'>Shop with Free Delivery! Promo Code: PERSCHOLASRTT14</div>
 
                <div className='bannerContainer'>
@@ -28,14 +30,14 @@ class Index extends React.Component {
                 </div>
                 </div>
                 </div>
-                  
+
                 <div >
                   <div className='container'>
-                        {fabrics.map((fabric) => {
+                        {fabrics.map((category) => {
                             return (
                                 <div className='item'> 
                                   <div >  
-                                  <a href={`/api/v1/fabrics/${fabric.id}`}><img src={fabric.image} alt={fabric.alt} className='bgSizeCover' /></a><br></br>
+                                  <a href={`/api/v1/fabrics/${fabric.category}`}><img src={fabric.image} alt={fabric.alt} className='bgSizeCover' /></a><br></br>
 
                                   <h3><a href={`/api/v1/fabrics/${fabric.id}`}> 
                                     {fabric.name.charAt(0).toUpperCase() + fabric.name.slice(1)}{' '} 
@@ -60,5 +62,4 @@ class Index extends React.Component {
         )
     }
   }
-  module.exports = Index;
-
+module.exports = Bandana;
