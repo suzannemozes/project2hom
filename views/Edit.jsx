@@ -23,15 +23,13 @@ class Edit extends React.Component {
                  <div className='bannerLeft'>
                  <div><a href="/api/v1/">House of Mozes</a></div></div>
                  <div className='bannerRight'>
-                  
-                     <a className='subBannerRight' href="/api/v1/fabrics">shop</a> 
-            
-                     <a className='subBannerRight' href="/api/v1/fabrics/new">add</a> 
-                     <a className='subBannerRight'>journal</a>
-                     <a href="/api/v1/fabrics/dog">DogHouse of Mozes</a>
-                     <a href="/api/v1/fabrics/home">Home by H.O.M.</a>
-                     <a href="/api/v1/fabrics/remnant">Remnants + Deadstock</a>
-                </div>
+                <a className='subBannerRight' href="/api/v1/fabrics">shop</a> 
+                <a className='subBannerRight' href="/api/v1/fabrics/new">add</a> 
+                <a className='subBannerRight'>journal</a>
+                <a href="/api/v1/fabrics/dog" className='subBannerRight'>dogHouse</a>
+                <a href="/api/v1/fabrics/home" className='subBannerRight'>home by H.O.M</a>
+                <a href="/api/v1/fabrics/remnant" className='subBannerRight'>remnants</a>
+              </div>
                 </div>
                 </div>
                 

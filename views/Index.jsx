@@ -12,7 +12,7 @@ class Index extends React.Component {
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
                 <link href="https://fonts.googleapis.com/css?family=Ramaraja|Karla|Oswald|" rel="stylesheet"></link>
              </head>
-             <body >
+          <body >
           <div> 
             <div className='spacer'>Shop with Free Delivery! Promo Code: PERSCHOLASRTT14</div>
             <div className='bannerContainer'>
