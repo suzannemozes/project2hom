@@ -77,11 +77,10 @@ a:active {
 button {
   background-color: #FFFFFF;
   border: 0;
-  border-radius: .5rem;
   box-sizing: border-box;
   color: #111827;
-  font-family: "Rambla",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  font-size: 1rem;
+  font-family: "Staatliches",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.25rem;
   padding: .75rem 1rem;
@@ -97,7 +96,8 @@ button {
 }
 
 .button:hover {
-  background-color: rgb(249,250,251);
+  background-color: #ff00d0;
+
 }
 
 .button:focus {
@@ -107,10 +107,6 @@ button {
 
 .button:focus-visible {
   box-shadow: none;
-}
-
-h1 {
-
 }
 
 h3 {
@@ -126,15 +122,6 @@ h3 {
   margin-inline-end: 0px;
   font-weight: bold;
 }
-
-/* h3 {
-  display: block;
-  font-size: 1.17em;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold; */
 
 .spacer{
   width: 100%;
@@ -175,12 +162,11 @@ h3 {
 
 .bannerRight {
 position: relative;
-font-family: "Oswald", sans-serif;
+font-family: "Staatliches", sans-serif;
 font-size: 20px;
 color: black;
 align-content: center;
 margin-left: 150px;
-color: #ce6a85;
 }
 
 .subBannerRight {
@@ -223,7 +209,7 @@ color: #ce6a85;
 }
 
 .section-header {
-  font-family: "Oswald", Inter,Source Sans Pro,Helvetica Neue,Arial,sans-serif;
+  font-family: "Staatliches", Inter,Source Sans Pro,Helvetica Neue,Arial,sans-serif;
   font-size: 160px;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -236,8 +222,6 @@ color: #ce6a85;
 }
 
 .containerHome{
-  background-color: #faa275;
-  color: purple;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -245,8 +229,6 @@ color: #ce6a85;
 }
 
 .containerIndex{
-  background-color: #faa275;
-  color: purple;
   display: flex;
 }
 
@@ -275,9 +257,6 @@ color: #ce6a85;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform: translateZ(0);
     font-weight: 800;
-    /* margin-left: auto;
-    margin-right: auto; */
-
     max-width: 680px;
     letter-spacing: -0.9px;
 }
@@ -329,7 +308,6 @@ color: #ce6a85;
   background-size: contain;
   width: 200px;
   height: 200px;
-  color: pink;
   resize: both;
   overflow: scroll;
 
@@ -392,3 +370,89 @@ color: #ce6a85;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+
+  /* form */
+
+ input, select, textarea {
+    font: "Arboreto";
+    font-size: 1.5em;
+    margin-top: 5px;
+  }
+
+  form {
+    /* Center the form on the page */
+    font-family: "Staatliches";
+    font-weight: 700;
+    font-size: 1.25em;
+    margin: 0 auto;
+    width: 400px;
+    /* Form outline */
+    padding: 1em;
+    border: 5px solid #CCC;
+    border-radius: 1em;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  form li + li {
+    margin-top: 1em;
+  }
+  
+  label {
+    /* Uniform size & alignment */
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+  }
+  
+  input,
+  textarea {
+    /* To make sure that all text fields have the same font settings
+       By default, textareas have a monospace font */
+    font: 1.25em bold "Arboreto";
+    font-style: italic;
+  
+    /* Uniform text field size */
+    width: 300px;
+    box-sizing: border-box;
+  
+    /* Match form field borders */
+  border: 1px solid  black;
+  }
+  
+  input:focus,
+  textarea:focus {
+    /* Additional highlight for focused elements */
+    border-color: #000;
+  }
+  
+  textarea {
+    /* Align multiline text fields with their labels */
+    vertical-align: top;
+  
+    /* Provide space to type some text */
+    height: 5em;
+  }
+  
+/* buffer on Add page */
+
+.newBuffer{
+  margin: 20px;
+}
+
+.formheader {
+  font: "Oswald";
+  font-size: 5em;
+}
+
+.createProduct {
+  font: bold Staatliches;
+}
+
+.staatliches{
+  font: "Staatliches";
+}

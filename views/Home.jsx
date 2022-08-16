@@ -14,26 +14,10 @@ class Home extends React.Component {
                <link href="https://fonts.googleapis.com/css?family=Ramaraja|Karla|Oswald|" rel="stylesheet"></link>
             </head>
             <body>
-               {/* <div> 
-               <div className='spacer'>Shop with Free Delivery! Promo Code: PERSCHOLASRTT14</div>
-
-               <div className='bannerContainer'>
-                 <div className='bannerLeft'>
-                   <div><a href="/api/v1/">House of Mozes</a></div></div>
-                 <div className='bannerRight'>
-                  
-                     <a className='subBannerRight' href="/api/v1/fabrics">shop</a> 
-            
-                     <a className='subBannerRight' href="/api/v1/fabrics/new">add</a> 
-                     <a className='subBannerRight'>journal</a>
-                </div>
-                </div>
-                </div> */}
-              
                 <div className='section'>
                   <h2 className='section-header'>House of Mozes</h2>
-                <div className='boxLeft'>
-                    <div class='grid-item-header grid-item-header-left'>
+                <div className='boxLeft staatliches'>
+                    <div className='grid-item-header grid-item-header-left'>
                         Curated
                         <br></br>
                         Textiles
@@ -50,15 +34,14 @@ class Home extends React.Component {
                    <a href='/api/v1/fabrics'><img src="https://imgur.com/iM9Ndiz.jpg" class="contact-picture-img" width="1160" height="1160" loading="lazy" /></a>
                 </div>
                 </div>
+                <div className='indexContainer'>
+                  <button><a href="/api/v1/fabrics/dog">DogHouse of Mozes</a></button>
+                  <button><a href="/api/v1/fabrics/home">Home by H.O.M.</a></button>
+                  <button><a href="/api/v1/fabrics/remnant">Remnants + Deadstock</a></button>
                 </div>
-                    Suzanne Mozes <br>
-                    </br>New York City
- {/* <img src="https://i.imgur.com/nEIY2AE.jpg" className="bgSizeContain"/> */}
-                    {/* <h3 class="grid-item-header grid-item-header-left">World Famous Fabric and Goods Curated Collection</h3> */}
-                  {/* <p class="grid-item-text grid-item-text-left">
-                    <a href='/api/v1/fabrics'><button><h3>View Fabrics</h3></button></a>
-                    <a href='/api/v1/fabrics/new'><button><h3 >Add New Fabric</h3></button></a>
-                  </p> */}
+                </div>
+                    copyright 2022 | Suzanne Mozes | New York City
+  
        
     </body>
   </html>

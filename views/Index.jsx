@@ -35,7 +35,7 @@ class Index extends React.Component {
                             return (
                                 <div className='item'> 
                                   <div >  
-                                  <a href={`/api/v1/fabrics/${fabric.id}`}><img src={fabric.image} alt={fabric.alt} className='bgSizeCover' /></a><br></br>
+                                  <a href={`/api/v1/fabrics/${fabric.category}/${fabric.id}`}><img src={fabric.image} alt={fabric.alt} className='bgSizeCover' /></a><br></br>
 
                                   <h3><a href={`/api/v1/fabrics/${fabric.id}`}> 
                                     {fabric.name.charAt(0).toUpperCase() + fabric.name.slice(1)}{' '} 

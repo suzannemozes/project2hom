@@ -78,13 +78,13 @@ class Show extends React.Component {
                 </div>
                 <div className='buttonContainer' width="300px"> 
               {/* DELETE */}
-              <form action={`/api/v1/fabrics/${fabrics.id}?_method=DELETE`} method="POST">
+              <form action={`/api/v1/fabrics/${fabrics.category}/${fabrics.id}?_method=DELETE`} method="POST">
               <button type="submit">Delete</button></form>
 
               {/* EDIT */}
-              <a href={`/api/v1/fabrics/${fabrics.id}/edit`}><button type="submit">Edit Entry</button></a>
+              <a href={`/api/v1/fabrics/${fabrics.category}/${fabrics.id}/edit`}><button type="submit">Edit Entry</button></a>
               
-              <button>{btn}</button>
+              <a>{btn}</a>
               {/* INDEX */}
               <a href="/api/v1/fabrics"><button>View Index</button></a>
               {/* <a href="/api/v1"><button><h3>View All Products</h3></button></a><br/> */}

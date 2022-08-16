@@ -31,9 +31,11 @@ class New extends React.Component {
                 </div>
 
         <div>
-            <h1>Add Textile Product</h1>
-            <form action="/api/v1/fabrics" method="POST">
-                Name: <input type="text" name="name" /><br/>
+        <div className='newBuffer formHeader'></div>
+            <h1>ADD PRODUCT</h1>
+            <div className='newBuffer'></div>
+            <form action="/api/v1/fabrics/" method="POST">
+                Name: <input type="text" name="name" placeholder="MUST ADD NAME"/><br/>
                 Color: <input type="text" name="color" /><br/>
                 Image: <input type="text" name="image" defaultValue=".jpg"/><br/>
                 Stock: <input type="text" name="stock" /><br/>
@@ -46,7 +48,7 @@ class New extends React.Component {
                 Category2: <input type="text" name="category2" /><br/>
                 Image 2: <input type="text" name="image2" /><br/>
                 Alt: <input type="text" name="alt"/><br/>
-                <input type="submit" name="" value="Create"/>
+                <input type="submit" className='createProduct' name="" value="CREATE PRODUCT"/>
              </form>
         </div>
       </body>

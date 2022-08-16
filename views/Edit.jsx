@@ -31,8 +31,13 @@ class Edit extends React.Component {
                 </div>
                 </div>
                 </div>
-
-                <form action={`/api/v1/fabrics/${fabric.id}?_method=PUT`} method="POST">
+                
+              <div>
+                <div className='newBuffer'></div>
+                 <h1 className='formheader'>DELETE PRODUCT</h1>
+                 <div className='newBuffer'></div>
+                <div className="staatliches">
+                <form action={`/api/v1/fabrics/${fabric.category}/${fabric.id}?_method=PUT`} method="POST">
                     Name: <input type="text" name="name" defaultValue={fabric.name} /><br/>
                     Color: <input type="text" name="color" defaultValue={fabric.color} /><br/>
                     Image: <input type="text" name="image" defaultValue={fabric.image} /><br/>
@@ -46,11 +51,11 @@ class Edit extends React.Component {
                     Category2: <input type="text" name="category2" defaultValue={fabric.category2}/><br/>
                     Image 2: <input type="text" name="image2" defaultValue={fabric.image2} /><br/>
                     Alt: <input type="text" name="alt" defaultValue={fabric.alt} /><br/>
-                    <input type="submit" name="" value="Save Edits"/>
+                    <input type="submit" className='createProduct' name="" value="SAVE EDITS"/>
                 </form>
-                <a href="/api/v1"><button><h3>Back to Main Directory!</h3></button></a><br/>
-
-                <a href="/api/v1/fabrics"><button><h3>View Index</h3></button></a>
+                </div>
+               </div>
+             
                
               </body>
            </html>
