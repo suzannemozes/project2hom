@@ -8,7 +8,7 @@
 }
 
 html{
-  background-color: rgb(226, 223, 223);
+  background-color: #e2dfdf;
   font-family: "Arboreto", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-decoration: none;
 }
@@ -58,7 +58,7 @@ a:link {
 }
 /* next the :visited pseudo class */
 a:visited {
-  color: black;
+  color: #000000;
 }
 
 a:hover {
